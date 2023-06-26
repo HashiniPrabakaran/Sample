@@ -1,0 +1,22 @@
+package Selejav;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
+
+public class Webelem {
+	public static WebDriver driver;
+	public static void main(String[] args) {
+		
+				
+				ChromeOptions qa = new ChromeOptions();
+				qa.addArguments("start-maximized");
+				qa.addArguments("remote-allow-origins=*");
+				
+				driver = new ChromeDriver(qa);	
+				
+				
+				//WebDriver driver = new ChromeDriver();
+				String appurl = "https://www.amazon.com";
+				driver.get(appurl);
