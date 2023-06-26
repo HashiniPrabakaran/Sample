@@ -1,0 +1,43 @@
+# Sample
+Program1
+package Selejav;
+
+import java.util.List;
+import java.util.Scanner;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.*;
+import org.openqa.selenium.JavascriptExecutor;
+
+public class FirstSel {
+	
+	public static  WebDriver driver;
+
+	public static void main(String[] args) throws InterruptedException {
+		// TODO Auto-generated method stub
+		Scanner sc = new Scanner(System.in);	
+		ChromeOptions qa = new ChromeOptions();
+		qa.addArguments("start-maximized");
+		qa.addArguments("remote-allow-origins=*");
+		driver = new ChromeDriver(qa);						//launch browser
+		
+		driver.get("https://demoqa.com/automation-practice-form");			//launch URL
+
+		String title = driver.getTitle();
+
+		System.out.println(title);
+
+		WebElement demofn = driver.findElement(By.id("firstName"));		//find by id
+
+		demofn.clear();
+
+		demofn.sendKeys("arunkumar");
+		WebElement demofn1 = driver.findElement(By.id("lastName"));		//find by id
+
+		//demofn1.clear();
+
+		demofn1.sendKeys("aravind");
+		
+		WebElement demoemail = driver.findElement(By.xpath("//input[@placeholder=\"name@example.com\"]"));	// Xpath
+		demoemail.sendKeys("arun@gmail.com");
